@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #020202;
+        font-family: 'Noto Sans TC', sans-serif;
+        line-height: 1.5;
+        color: #ffffff;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    a:hover {
+        opacity: 0.8;
+    }
+
+    .container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 12px;
+    }
+
+    .logo {
+        width: 245px;
+    }
+
+    .me-20 {
+        margin-right: 20px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #ffffff;
+        position: relative;
+    }
+
+    .navbar a {
+        color: #ffffff;
+        font-weight: 700;
+    }
+
+    .navbar-menu {
+        display: flex;
+    }
+
+    .navbar-btn {
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        color: #ffffff;
+        display: none;
+        /* 在電腦版時不顯示 */
+    }
+    
+
+    .navbar-btn:hover {
+        transform: scale(1.1);
+    }
+
+    .navbar-collapse {
+        display: none;
+        /* 在電腦版時不顯示 */
+        position: absolute;
+        top: 81px;
+        width: 100%;
+        min-height: calc(100vh - 81px);
+        /* 佔滿整個瀏覽器高度扣掉 navbar 高度 */
+        background-color: #000000;
+        border-top: 1px solid #ffffff;
+    }
+
+    .navbar-collapse a {
+        font-size: 80px;
+        line-height: 1.2;
+        margin: 4px 0;
+    }
+    li{
+        list-style: none;
+    }
+
+    @media (max-width: 768px) {
+        .navbar-btn {
+            display: block;
+        }
+
+        .navbar-menu {
+            display: none;
+        }
+
+        .navbar-collapse {
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .d-flex{
+            display: flex;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="#">
+                <img src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/logo.png?raw=true"
+                    alt="logo" class="logo">
+            </a>
+            <button type="button" class="navbar-btn">
+                <span class="material-icons">
+                    menu
+                </span>
+            </button>
+            <ul class="navbar-menu">
+                <li><a href="#" class="text-white me-20">首頁</a></li>
+                <li><a href="#" class="text-white">定價</a></li>
+            </ul>
+            <div class="navbar-collapse">
+                <ul>
+                    <li><a href="#" class="text-white me-20">首頁</a></li>
+                    <li><a href="#" class="text-white">定價</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+$(document).ready(function(){
+    $('.navbar-btn').click(function(){
+        $('.navbar-collapse').toggleClass('d-flex')
+    })
+})
+</script>
+
+</html>
